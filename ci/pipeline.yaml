@@ -104,7 +104,7 @@ jobs:
       task-src: oic-ci-tasks-src
       function-src: fission-function-src
     params:
-      SEARCH_PATH: "function-src/echo_read_secret"
+      SEARCH_PATH: "function-src/echo"
   - task: publish-function-to-staging
     image: docker-image-fission-cli
     file: oic-ci-tasks-src/function/publish/publish_function.yaml
@@ -114,7 +114,7 @@ jobs:
       FISSION_ROUTER: ((fission-router))
       FUNCTION_NAME: echo
       FUNCTION_ENVIRONMENT: python
-      CODE_PATH: function-src/echo/echo.py
+      CODE_PATH: function-src/echo.py
       FUNCTION_METHOD: POST
     input_mapping: 
       task-src: oic-ci-tasks-src
@@ -129,7 +129,7 @@ jobs:
     params:
       FISSION_ROUTER: ((fission-router))
       ENVIRONMENT: staging
-      COLLECTION: function-src/echo/ci/collection.json
+      COLLECTION: function-src/ci/collection.json
       FUNCTION_NAME: echo
       PROTOCOL: http
       TARGET_PORT: 80
