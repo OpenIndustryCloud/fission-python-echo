@@ -178,7 +178,7 @@ jobs:
       task-src: oic-ci-tasks-src
     params:
       GITHUB_ACCESS_TOKEN: ((gh-access-token))
-      REPO_NAME: OpenIndustryCloud/fission-functions
+      REPO_NAME: OpenIndustryCloud/fission-python-echo
       BASE_BRANCH: test-merge
 
 - name: merge-pr
