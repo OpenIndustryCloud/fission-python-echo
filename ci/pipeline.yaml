@@ -95,9 +95,9 @@ jobs:
   - aggregate:
     - get: docker-image-fission-cli
     - get: docker-image-newman
-    - get: fission-function-src
-      trigger: true
-    - get: oic-ci-tasks-src
+  - get: fission-function-src
+    trigger: true
+  - get: oic-ci-tasks-src
   - task: lint-python
     file: oic-ci-tasks-src/python/lint/lint_python.yaml
     input_mapping: 
@@ -205,7 +205,7 @@ jobs:
     file: oic-ci-tasks-src/python/lint/lint_python.yaml
     input_mapping: 
       task-src: oic-ci-tasks-src
-      function-src: fission-function-src
+      function-src: fission-function-pr
     params:
       SEARCH_PATH: "function-src/echo"
     on_success:
